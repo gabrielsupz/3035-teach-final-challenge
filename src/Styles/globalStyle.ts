@@ -14,6 +14,7 @@ ${reset}
   --background-light-gray: #F7F7F7;
   --input-shadow-focus-color: #0b2447;
 --background-pages:#ECEFF5;
+--alert-background-color: #FC8621;
 
   color: var(--text-color);
 }
