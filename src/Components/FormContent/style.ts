@@ -60,6 +60,9 @@ export const AlertBox = styled.div`
   border-radius: 22px;
   background-color: var(--alert-background-color);
   color: white;
+  @media (max-width: 700px) {
+    width: 270px;
+  }
 `
 
 export const AlertMessage = styled.div`
@@ -74,6 +77,10 @@ export const AlertMessage = styled.div`
 
   p {
     font-size: 12px;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 200px;
   }
 `
 export const AlertBalls = styled.div`

@@ -46,7 +46,9 @@ export const FormBoxStyled = styled.div`
   position: relative;
 
   margin: 0;
-
+  @media (max-width: 750px) {
+    width: 300px;
+  }
   @media (max-width: 340px) {
     width: 280px;
   }

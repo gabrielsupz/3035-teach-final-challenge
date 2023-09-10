@@ -2,10 +2,10 @@ import { useLoading } from '../../Contexts/LoadingContext'
 import * as S from './style'
 
 export function FormContent() {
+  const { setLoadingState } = useLoading()
   const handleSubmitButton = () => {
-    const { setLoadingState } = useLoading()
     const AlertBox = document.querySelector('#AlertBox')
-    setLoadingState(true)
+
     AlertBox?.classList.add('active')
   }
 
