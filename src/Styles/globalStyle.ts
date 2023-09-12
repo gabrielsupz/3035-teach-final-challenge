@@ -13,9 +13,11 @@ ${reset}
   --input-border-and-placeholder-color: #B5B5B5;
   --background-light-gray: #F7F7F7;
   --input-shadow-focus-color: #0b2447;
---background-pages:#ECEFF5;
---alert-background-color: #FC8621;
+  --background-pages:#ECEFF5;
+  --alert-background-color: #FC8621;
+  --h3-text-color: #6A6F73;
 
+background-color: var(--background-pages);
   color: var(--text-color);
 }
 

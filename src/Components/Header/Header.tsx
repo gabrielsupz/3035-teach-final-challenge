@@ -1,8 +1,12 @@
 import * as S from './style'
 
-export function Header() {
+interface HeaderProps {
+  isVisibleInDesktop: boolean
+}
+
+export function Header({ isVisibleInDesktop }: HeaderProps) {
   return (
-    <S.HeaderStyled>
+    <S.HeaderStyled isVisibleInDesktop={isVisibleInDesktop}>
       <S.LogoHeaderStyled src="/logo-blue.svg" alt="Logo do Site" />
     </S.HeaderStyled>
   )

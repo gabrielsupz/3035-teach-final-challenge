@@ -1,10 +1,22 @@
-import { styled } from 'styled-components'
+import { css, styled } from 'styled-components'
 
-export const HeaderStyled = styled.header`
-  display: none;
-  width: 100%;
+interface HeaderProps {
+  isVisibleInDesktop: boolean
+}
+
+export const HeaderStyled = styled.header<HeaderProps>`
+  ${({ isVisibleInDesktop }) =>
+    isVisibleInDesktop
+      ? css`
+          display: flex;
+        `
+      : css`
+          display: none;
+        `}
+
   padding: 30px 65px 30px 65px;
   background-color: white;
+
   @media (max-width: 750px) {
     display: flex;
     padding: 20px 0 20px 0;
