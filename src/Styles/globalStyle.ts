@@ -15,7 +15,10 @@ ${reset}
   --input-shadow-focus-color: #0b2447;
   --background-pages:#ECEFF5;
   --alert-background-color: #FC8621;
-  --h3-text-color: #6A6F73;
+  --light-text-color: #6A6F73;
+  --repository-name-text-color: #202E49;
+  
+
 
 background-color: var(--background-pages);
   color: var(--text-color);

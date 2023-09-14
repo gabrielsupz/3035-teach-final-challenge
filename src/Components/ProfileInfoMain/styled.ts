@@ -3,20 +3,25 @@ import { styled } from 'styled-components'
 export const ProfileInfoMainStyled = styled.main`
   display: flex;
   flex-direction: column;
+  background-color: white;
   padding: 60px 60px 80px 60px;
   gap: 55px;
+  box-shadow: 0px 4px 21px -4px #00000066;
+  border-radius: 10px;
+
   h2 {
     font-size: 30px;
     font-weight: 700;
   }
+
   p {
     font-size: 13px;
     color: #2d2d2d;
   }
 
-  h3 {
+  h4 {
     font-size: 12px;
-    color: var(--h3-text-color);
+    color: var(--light-text-color);
   }
   strong {
     color: #2d2d2d;
@@ -37,7 +42,7 @@ export const InfoProfileStyled = styled.div`
     border-radius: 4px;
   }
 
-  h3 {
+  h4 {
     display: flex;
     flex-direction: column;
     gap: 9px;
@@ -50,6 +55,23 @@ export const NameAndBioStyled = styled.div`
 `
 export const RepositorysBoxStyled = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding: 40px 10px 0 10px;
-  gap: 35px;
+  width: 100%;
+  justify-content: space-between;
+  row-gap: 40px;
 `
+export const SectionRepositoryStyled = styled.div`
+  display: flex;
+  width: 100%;
+
+  flex-direction: column;
+`
+
+export const PageAndPageButtonsBoxStyled = styled.div`
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: end;
+`
+export const PageButtonStyled = styled.button``

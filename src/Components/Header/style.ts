@@ -16,7 +16,9 @@ export const HeaderStyled = styled.header<HeaderProps>`
 
   padding: 30px 65px 30px 65px;
   background-color: white;
+  width: 100%;
 
+  align-self: center;
   @media (max-width: 750px) {
     display: flex;
     padding: 20px 0 20px 0;
