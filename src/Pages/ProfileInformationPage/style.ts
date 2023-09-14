@@ -9,6 +9,10 @@ export const ProfileInformationPageStyled = styled.div`
   padding: 0 50px 42px 50px;
   height: 100%;
   max-width: 1440px;
+
+  @media (max-width: 750px) {
+    padding: 0 20px;
+  }
 `
 export const LoadingContent = styled.div`
   width: 100%;

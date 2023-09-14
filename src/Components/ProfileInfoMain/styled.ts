@@ -9,6 +9,15 @@ export const ProfileInfoMainStyled = styled.main`
   box-shadow: 0px 4px 21px -4px #00000066;
   border-radius: 10px;
 
+  @media (max-width: 750px) {
+    padding: 50px 30px 80px 30px;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   h2 {
     font-size: 30px;
     font-weight: 700;
@@ -37,6 +46,13 @@ export const InfoProfileStyled = styled.div`
   padding: 26px 37px 26px 30px;
   display: flex;
   gap: 43px;
+
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   img {
     width: 125px;
     border-radius: 4px;
