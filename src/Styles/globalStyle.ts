@@ -17,6 +17,8 @@ ${reset}
   --alert-background-color: #FC8621;
   --light-text-color: #6A6F73;
   --repository-name-text-color: #202E49;
+  --page-button-border:#575759;
+  --page-button-back-border: #C4C4C4;
   
 
 

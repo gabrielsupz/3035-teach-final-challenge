@@ -10,3 +10,11 @@ export const ProfileInformationPageStyled = styled.div`
   height: 100%;
   max-width: 1440px;
 `
+export const LoadingContent = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`

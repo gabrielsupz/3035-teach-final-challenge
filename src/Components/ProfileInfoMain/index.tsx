@@ -29,7 +29,7 @@ export function ProfileInfoMain() {
         <S.PageAndPageButtonsBoxStyled>
           <p>3 de 10 </p>
           <div>
-            <button>
+            <S.PageButtonStyled>
               <svg
                 width="11"
                 height="10"
@@ -48,8 +48,8 @@ export function ProfileInfoMain() {
                   stroke-linecap="round"
                 />
               </svg>
-            </button>
-            <button>
+            </S.PageButtonStyled>
+            <S.PageButtonStyled>
               <svg
                 width="11"
                 height="10"
@@ -68,7 +68,7 @@ export function ProfileInfoMain() {
                   stroke-linecap="round"
                 />
               </svg>
-            </button>
+            </S.PageButtonStyled>
           </div>
         </S.PageAndPageButtonsBoxStyled>
         <S.RepositorysBoxStyled>

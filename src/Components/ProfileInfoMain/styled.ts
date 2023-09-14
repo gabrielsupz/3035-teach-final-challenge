@@ -73,5 +73,20 @@ export const PageAndPageButtonsBoxStyled = styled.div`
   gap: 15px;
   width: 100%;
   justify-content: end;
+  align-items: center;
+  div {
+    display: flex;
+    gap: 5px;
+  }
+
+  button:nth-child(1) {
+    border-color: var(--page-button-back-border);
+  }
 `
-export const PageButtonStyled = styled.button``
+export const PageButtonStyled = styled.button`
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--page-button-border);
+  background-color: white;
+`

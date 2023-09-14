@@ -2,7 +2,7 @@ import * as S from './style'
 
 export function Loading() {
   return (
-    <>
+    <S.LogoBoxStyled>
       <S.LoadingLogoStyled
         width="80"
         height="80"
@@ -23,6 +23,6 @@ export function Loading() {
       </S.LoadingLogoStyled>
 
       <S.LoadingTextStyled>Carregando...</S.LoadingTextStyled>
-    </>
+    </S.LogoBoxStyled>
   )
 }

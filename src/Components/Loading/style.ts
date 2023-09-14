@@ -8,7 +8,13 @@ const AnimationLoading = keyframes`
     transform: rotate(360deg);
   }
 `
-
+export const LogoBoxStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+`
 export const LoadingLogoStyled = styled.svg`
   width: 80px;
   height: 80px;
