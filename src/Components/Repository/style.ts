@@ -31,11 +31,15 @@ export const RepositoryDivStyled = styled.div`
     flex-direction: column;
     gap: 5px;
     font-size: 12px;
+    background-color: #f7f7f7;
+    padding: 11px 11px 11px 15px;
+    text-align: justify;
+    border-radius: 11px;
   }
 
   p {
     color: var(--repository-name-text-color);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
   }
 `

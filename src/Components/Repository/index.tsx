@@ -7,7 +7,7 @@ export function Repository() {
 
       <S.RepositoryDivStyled>
         <h4>
-          Link: <p>www.github/gabrielsupz/profiel.com</p>
+          Link: <p>https://github.com/gabrielsupz/Design-System-IgniteLab</p>
         </h4>
       </S.RepositoryDivStyled>
       <S.RepositoryDivStyled>
