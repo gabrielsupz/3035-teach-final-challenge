@@ -13,6 +13,10 @@ export const ProfileInformationPageStyled = styled.div`
   @media (max-width: 750px) {
     padding: 0 20px;
   }
+
+  @media (max-width: 330px) {
+    padding: 0 5px;
+  }
 `
 export const LoadingContent = styled.div`
   width: 100%;

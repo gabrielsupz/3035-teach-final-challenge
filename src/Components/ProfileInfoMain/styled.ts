@@ -10,7 +10,8 @@ export const ProfileInfoMainStyled = styled.main`
   border-radius: 10px;
 
   @media (max-width: 750px) {
-    padding: 50px 30px 80px 30px;
+    //  padding: 50px 30px 80px 30px;
+    padding: 40px 10px 30px 10px;
 
     h2 {
       width: 100%;
@@ -76,12 +77,25 @@ export const RepositorysBoxStyled = styled.div`
   width: 100%;
   justify-content: space-between;
   row-gap: 40px;
+
+  @media (max-width: 750px) {
+    justify-content: space-around;
+    padding: 0;
+    padding-top: 20px;
+    align-items: center;
+  }
 `
 export const SectionRepositoryStyled = styled.div`
   display: flex;
   width: 100%;
 
   flex-direction: column;
+
+  @media (max-width: 750px) {
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
 `
 
 export const PageAndPageButtonsBoxStyled = styled.div`

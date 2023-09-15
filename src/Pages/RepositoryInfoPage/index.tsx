@@ -1,16 +1,19 @@
 import * as S from './style'
 import { Header } from '../../Components/Header/Header'
+import { Repository } from '../../Components/Repository'
 
 export function RepositoryInfoPage() {
   return (
     <S.RepositoryInfoPageStyled>
       <Header isVisibleInDesktop />
 
-      <div>
+      <S.RepositoryInfoMainStyled>
         <h2>Especificações</h2>
 
-        <div></div>
-      </div>
+        <S.RepositoryDetailsShowBox>
+          <Repository RepositoryDatailsShow />
+        </S.RepositoryDetailsShowBox>
+      </S.RepositoryInfoMainStyled>
     </S.RepositoryInfoPageStyled>
   )
 }
