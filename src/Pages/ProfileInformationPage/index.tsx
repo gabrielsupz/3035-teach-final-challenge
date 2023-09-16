@@ -14,7 +14,7 @@ export function ProfileInformationPage() {
 
   return (
     <S.ProfileInformationPageStyled>
-      <Header isVisibleInDesktop />
+      <Header isVisibleOnLargeScreens />
       {isLoading ? (
         <S.LoadingContent>
           <Loading />

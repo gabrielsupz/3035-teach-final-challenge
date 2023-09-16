@@ -1,12 +1,12 @@
 import { css, styled } from 'styled-components'
 
 interface RepositoryStyleProps {
-  isShowDatails: boolean
+  showDatails: boolean
 }
 
 export const RepositoryStyled = styled.div<RepositoryStyleProps>`
-  ${({ isShowDatails }) =>
-    isShowDatails
+  ${({ showDatails }) =>
+    showDatails
       ? css`
           width: 680px;
           gap: 25px;
@@ -62,8 +62,8 @@ export const RepositoryStyled = styled.div<RepositoryStyleProps>`
 `
 
 export const RepositoryDivStyled = styled.div<RepositoryStyleProps>`
-  ${({ isShowDatails }) =>
-    isShowDatails
+  ${({ showDatails }) =>
+    showDatails
       ? css`
           width: 100%;
         `

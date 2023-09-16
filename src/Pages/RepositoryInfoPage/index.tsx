@@ -5,7 +5,7 @@ import { Repository } from '../../Components/Repository'
 export function RepositoryInfoPage() {
   return (
     <S.RepositoryInfoPageStyled>
-      <Header isVisibleInDesktop />
+      <Header isVisibleOnLargeScreens />
 
       <S.RepositoryInfoMainStyled>
         <h2>Especificações</h2>

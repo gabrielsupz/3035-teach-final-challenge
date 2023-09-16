@@ -1,12 +1,12 @@
 import * as S from './style'
 
 interface HeaderProps {
-  isVisibleInDesktop: boolean
+  isVisibleOnLargeScreens: boolean
 }
 
-export function Header({ isVisibleInDesktop }: HeaderProps) {
+export function Header({ isVisibleOnLargeScreens }: HeaderProps) {
   return (
-    <S.HeaderStyled isVisibleInDesktop={isVisibleInDesktop}>
+    <S.HeaderStyled isVisibleOnLargeScreens={isVisibleOnLargeScreens}>
       <S.LogoHeaderStyled src="/logo-blue.svg" alt="Logo do Site" />
     </S.HeaderStyled>
   )

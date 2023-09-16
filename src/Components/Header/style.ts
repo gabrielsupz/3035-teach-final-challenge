@@ -1,12 +1,12 @@
 import { css, styled } from 'styled-components'
 
 interface HeaderProps {
-  isVisibleInDesktop: boolean
+  isVisibleOnLargeScreens: boolean
 }
 
 export const HeaderStyled = styled.header<HeaderProps>`
-  ${({ isVisibleInDesktop }) =>
-    isVisibleInDesktop
+  ${({ isVisibleOnLargeScreens }) =>
+    isVisibleOnLargeScreens
       ? css`
           display: flex;
         `

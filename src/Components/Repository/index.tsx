@@ -5,26 +5,26 @@ interface RepositoryProps {
 export function Repository({ RepositoryDatailsShow }: RepositoryProps) {
   if (RepositoryDatailsShow) {
     return (
-      <S.RepositoryStyled isShowDatails>
+      <S.RepositoryStyled showDatails>
         <h3>Repositório</h3>
 
-        <S.RepositoryDivStyled isShowDatails>
+        <S.RepositoryDivStyled showDatails>
           <h4>
             Link: <p>https://github.com/gabrielsupz/Design-System-IgniteLab</p>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled isShowDatails>
+        <S.RepositoryDivStyled showDatails>
           <h4>
             Privacidade: <p>Publico</p>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled isShowDatails>
+        <S.RepositoryDivStyled showDatails>
           <h4>
             Linguagem: <p>Java</p>
           </h4>
         </S.RepositoryDivStyled>
 
-        <S.RepositoryDivStyled isShowDatails>
+        <S.RepositoryDivStyled showDatails>
           <h4>
             Descrição:{' '}
             <p>
@@ -39,15 +39,15 @@ export function Repository({ RepositoryDatailsShow }: RepositoryProps) {
     )
   } else {
     return (
-      <S.RepositoryStyled isShowDatails={false}>
+      <S.RepositoryStyled showDatails={false}>
         <h3>Repositório</h3>
 
-        <S.RepositoryDivStyled isShowDatails={false}>
+        <S.RepositoryDivStyled showDatails={false}>
           <h4>
             Link: <p>https://github.com/gabrielsupz/Design-System-IgniteLab</p>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled isShowDatails={false}>
+        <S.RepositoryDivStyled showDatails={false}>
           <h4>
             Descrição:{' '}
             <p>
