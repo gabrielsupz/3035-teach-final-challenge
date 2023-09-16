@@ -1,18 +1,39 @@
+import { useEffect } from 'react'
+import { GetUser } from '../../Service/GithubUsers.service'
+
+import { useNavigate } from 'react-router-dom'
 import { useLoading } from '../../Contexts/LoadingContext'
+import { useShowAlert } from '../../Contexts/ShowAlertMessageContext'
 import * as S from './style'
 
 export function FormContent() {
   const { setLoadingState } = useLoading()
-  const handleSubmitButton = () => {
-    const AlertBox = document.querySelector('#AlertBox')
+  const { setShowAlertState, showAlert } = useShowAlert()
+  const navigate = useNavigate()
 
-    AlertBox?.classList.add('active')
+  useEffect(() => {
+    const AlertBox = document.querySelector('#AlertBox')
+    if (showAlert) {
+      AlertBox?.classList.add('active')
+    } else {
+      AlertBox?.classList.remove('active')
+    }
+  }, [showAlert])
+
+  const handleSubmitButton = async () => {
+    const searchUser = document.querySelector('#searchUser') as HTMLInputElement
+    const userName = searchUser.value
+    setLoadingState(true)
+    await GetUser(userName)
+      .then(() => navigate(`/profile/${userName}`))
+      .catch(() => {
+        setShowAlertState(true)
+        setLoadingState(false)
+      })
   }
 
   const handleCloseAlertButton = () => {
-    const AlertBox = document.querySelector('#AlertBox')
-
-    AlertBox?.classList.remove('active')
+    setShowAlertState(false)
   }
   return (
     <>
@@ -97,6 +118,7 @@ export function FormContent() {
       <S.LabelAndInputStyled id="userSearch">
         Usuário
         <input
+          id="searchUser"
           name="search"
           type="text"
           placeholder="Digite aqui seu usuário do Github"
