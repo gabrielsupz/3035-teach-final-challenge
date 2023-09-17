@@ -5,23 +5,26 @@ import { GlobalStyle } from './Styles/globalStyle'
 import { ProfileInformationPage } from './Pages/ProfileInformationPage'
 import { RepositoryInfoPage } from './Pages/RepositoryInfoPage'
 import { ShowAlertContextProvider } from './Contexts/ShowAlertMessageContext'
+import { UserInfoContextProvider } from './Contexts/UserInfoContext'
 function App() {
   return (
     <>
       <GlobalStyle />
       <LoadingContextProvider>
         <ShowAlertContextProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<AccessPage />} />
+          <UserInfoContextProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<AccessPage />} />
 
-              <Route
-                path="/profile/:user"
-                element={<ProfileInformationPage />}
-              />
-              <Route path="/repository" element={<RepositoryInfoPage />} />
-            </Routes>
-          </BrowserRouter>
+                <Route
+                  path="/profile/:user"
+                  element={<ProfileInformationPage />}
+                />
+                <Route path="/repository" element={<RepositoryInfoPage />} />
+              </Routes>
+            </BrowserRouter>
+          </UserInfoContextProvider>
         </ShowAlertContextProvider>
       </LoadingContextProvider>
     </>

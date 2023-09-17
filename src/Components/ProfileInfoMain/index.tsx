@@ -1,25 +1,25 @@
 import { Repository } from '../Repository'
+import { useUserInfo } from '../../Contexts/UserInfoContext'
 import * as S from './styled'
+
 export function ProfileInfoMain() {
+  const { userInfo } = useUserInfo()
+
   return (
     <S.ProfileInfoMainStyled>
       <h2>Informações do Perfil</h2>
       <S.InfoProfileStyled>
-        <img
-          src="https://avatars.githubusercontent.com/u/102992996?s=400&u=80dfdee29368bfbd801dd0d3d6f27a84009a10f1&v=4"
-          alt=""
-        />
+        <img src={userInfo.avatar_url} alt="" />
 
         <S.NameAndBioStyled>
           <h4>
-            Nome: <strong>Gabriel Suptitz</strong>
+            Nome:{' '}
+            <strong>
+              {userInfo.name != null ? userInfo.name : userInfo.login}
+            </strong>
           </h4>
           <h4>
-            Bio:{' '}
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta,
-              velit at voluptatem nemo
-            </p>
+            Bio: <p>{userInfo.bio != null ? userInfo.bio : 'Sem biografia'}</p>
           </h4>
         </S.NameAndBioStyled>
       </S.InfoProfileStyled>

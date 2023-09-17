@@ -10,7 +10,6 @@ export const ProfileInfoMainStyled = styled.main`
   border-radius: 10px;
 
   @media (max-width: 750px) {
-    //  padding: 50px 30px 80px 30px;
     padding: 40px 10px 30px 10px;
 
     h2 {
