@@ -17,8 +17,27 @@ export function Repository({
   RepositoryDatailsShow
 }: RepositoryComponentProps) {
   const navigate = useNavigate()
+
   const handleCardClick = () => {
     navigate(`repositories/${index}`)
+  }
+
+  function simplifyStrings(string: string) {
+    if (string.length > 25) {
+      return string.substring(0, 25) + '...'
+    }
+
+    return string
+  }
+  function capitalizeFirstLetter(inputString: string): string {
+    if (inputString.length === 0) {
+      return inputString
+    }
+
+    const firstLetter = inputString[0].toUpperCase()
+    const remainingLetters = inputString.slice(1)
+
+    return firstLetter + remainingLetters
   }
 
   if (RepositoryDatailsShow) {
@@ -36,18 +55,19 @@ export function Repository({
         </S.RepositoryDivStyled>
         <S.RepositoryDivStyled showDatails>
           <h4>
-            Privacidade: <p>{visibility}</p>
+            Privacidade:{' '}
+            <p>{visibility ? capitalizeFirstLetter(visibility) : ''}</p>
           </h4>
         </S.RepositoryDivStyled>
         <S.RepositoryDivStyled showDatails>
           <h4>
-            Linguagem: <p>{language}</p>
+            Linguagem: <p>{language ? language : 'Sem linguagem definida'}</p>
           </h4>
         </S.RepositoryDivStyled>
 
         <S.RepositoryDivStyled showDatails>
           <h4>
-            Descrição: <p>{description}</p>
+            Descrição: <p>{description ? description : 'Sem descrição'}</p>
           </h4>
         </S.RepositoryDivStyled>
       </S.RepositoryStyled>
@@ -65,13 +85,16 @@ export function Repository({
           <h4>
             Link:{' '}
             <a target="_blank" href={url}>
-              {url}
+              {url ? simplifyStrings(url) : 'Sem url'}
             </a>
           </h4>
         </S.RepositoryDivStyled>
         <S.RepositoryDivStyled showDatails={false}>
           <h4>
-            Descrição: <p>{description}</p>
+            Descrição:{' '}
+            <p>
+              {description ? simplifyStrings(description) : 'Sem descrição'}
+            </p>
           </h4>
         </S.RepositoryDivStyled>
       </S.RepositoryStyled>
