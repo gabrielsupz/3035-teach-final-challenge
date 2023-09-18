@@ -1,4 +1,5 @@
 import { useContext, createContext, useState } from 'react'
+import { RepositoryProps } from '../Pages/ProfileInformationPage'
 
 type UserInfoContextType = {
   userInfo: UserInfoProps
@@ -9,12 +10,12 @@ interface UserInfoContextProviderType {
   children: React.ReactNode
 }
 
-interface UserInfoProps {
+export interface UserInfoProps {
   bio: string
   name: string
   login: string
   avatar_url: string
-  repos_url: string
+  repositoriesList: RepositoryProps[]
 }
 
 export const UserInfoContext = createContext<UserInfoContextType>(

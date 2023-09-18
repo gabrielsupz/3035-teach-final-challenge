@@ -25,7 +25,7 @@ export function FormContent() {
     const userName = searchUser.value
     setLoadingState(true)
     await GetUser(userName)
-      .then(() => navigate(`/profile/${userName}`))
+      .then(() => navigate(`/${userName}`))
       .catch(() => {
         setShowAlertState(true)
         setLoadingState(false)

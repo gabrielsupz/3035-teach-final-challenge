@@ -17,11 +17,11 @@ function App() {
               <Routes>
                 <Route path="/" element={<AccessPage />} />
 
+                <Route path="/:user" element={<ProfileInformationPage />} />
                 <Route
-                  path="/profile/:user"
-                  element={<ProfileInformationPage />}
+                  path=":user/repositories/:index"
+                  element={<RepositoryInfoPage />}
                 />
-                <Route path="/repository" element={<RepositoryInfoPage />} />
               </Routes>
             </BrowserRouter>
           </UserInfoContextProvider>

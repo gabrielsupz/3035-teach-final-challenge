@@ -6,42 +6,23 @@ import * as S from './styled'
 export function ProfileInfoMain() {
   const { userInfo } = useUserInfo()
   const [currentPage, setCurrentPage] = useState(1)
-  const pages = Math.ceil(userInfo.repositoriesList.length / 3)
-
-  const startIndex = (currentPage - 1) * 3
-  const endIndex = startIndex + 3
-  const repositoriesToShow = userInfo.repositoriesList.slice(
-    startIndex,
-    endIndex
-  )
-
-  const handleNextPage = () => {
-    if (currentPage < pages) {
-      setCurrentPage(currentPage + 1)
-    }
-  }
-
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1)
-    }
-  }
+  const pages = (userInfo.repositoriesList.length / 3).toFixed(0)
 
   return (
     <S.ProfileInfoMainStyled>
       <h2>Informações do Perfil</h2>
       <S.InfoProfileStyled>
-        <img
-          src={userInfo.avatar_url}
-          alt={`Imagem do usuário ${userInfo.login}`}
-        />
+        <img src={userInfo.avatar_url} alt="" />
 
         <S.NameAndBioStyled>
           <h4>
-            Nome: <strong>{userInfo.name || userInfo.login}</strong>
+            Nome:{' '}
+            <strong>
+              {userInfo.name != null ? userInfo.name : userInfo.login}
+            </strong>
           </h4>
           <h4>
-            Bio: <p>{userInfo.bio || 'Sem biografia'}</p>
+            Bio: <p>{userInfo.bio != null ? userInfo.bio : 'Sem biografia'}</p>
           </h4>
         </S.NameAndBioStyled>
       </S.InfoProfileStyled>
@@ -50,10 +31,10 @@ export function ProfileInfoMain() {
         <h2>Repositórios</h2>
         <S.PageAndPageButtonsBoxStyled>
           <p>
-            {currentPage} de {pages}
+            {currentPage} de {pages}{' '}
           </p>
           <div>
-            <S.PageButtonStyled onClick={handlePreviousPage}>
+            <S.PageButtonStyled>
               <svg
                 width="11"
                 height="10"
@@ -73,7 +54,7 @@ export function ProfileInfoMain() {
                 />
               </svg>
             </S.PageButtonStyled>
-            <S.PageButtonStyled onClick={handleNextPage}>
+            <S.PageButtonStyled>
               <svg
                 width="11"
                 height="10"
@@ -96,20 +77,20 @@ export function ProfileInfoMain() {
           </div>
         </S.PageAndPageButtonsBoxStyled>
         <S.RepositorysBoxStyled>
-          {repositoriesToShow.length > 0 ? (
-            repositoriesToShow.map((repository, index) => (
+          {userInfo.repositoriesList ? (
+            userInfo.repositoriesList.map((e, index) => (
               <Repository
-                description={repository.description}
-                language={repository.language}
-                name={repository.name}
-                url={repository.url}
-                visibility={repository.visibility}
-                index={startIndex + index}
-                key={startIndex + index}
+                description={e.description}
+                language={e.language}
+                name={e.name}
+                url={e.url}
+                visibility={e.visibility}
+                index={index}
+                key={index}
               />
             ))
           ) : (
-            <h2>Sem repositórios</h2>
+            <h2>Sem repositorios</h2>
           )}
         </S.RepositorysBoxStyled>
       </S.SectionRepositoryStyled>

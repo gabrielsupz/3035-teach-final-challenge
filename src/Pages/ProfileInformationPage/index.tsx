@@ -4,44 +4,60 @@ import { ProfileInfoMain } from '../../Components/ProfileInfoMain'
 import { useLoading } from '../../Contexts/LoadingContext'
 import { Loading } from '../../Components/Loading'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { GetUser } from '../../Service/GithubUsers.service'
+import { GetUser, GetUserRepositorys } from '../../Service/GithubUsers.service'
 import { useUserInfo } from '../../Contexts/UserInfoContext'
 import { useShowAlert } from '../../Contexts/ShowAlertMessageContext'
+
+export interface RepositoryProps {
+  name: string
+  language: string
+  url: string
+  description: string
+  visibility: string
+}
+
 export function ProfileInformationPage() {
   const { isLoading, setLoadingState } = useLoading()
   const { setUserInfo, userInfo } = useUserInfo()
   const { setShowAlertState } = useShowAlert()
-
   const navigate = useNavigate()
   const { user } = useParams()
 
   const getUser = async () => {
     setLoadingState(true)
-    await GetUser(user as string)
-      .then(e => {
-        setUserInfo({
-          avatar_url: e.avatar_url,
-          bio: e.bio,
-          name: e.name,
-          login: e.login,
-          repos_url: e.repos_url
-        })
 
-        setLoadingState(false)
-      })
-      .catch(() => {
-        setShowAlertState(true)
-        navigate('/')
+    try {
+      const userData = await GetUser(user as string)
 
-        setLoadingState(false)
+      const reposData = await GetUserRepositorys(user as string)
+      const filteredRepos = reposData.map((repo: any) => ({
+        name: repo.name,
+        language: repo.language,
+        url: repo.svn_url,
+        description: repo.description,
+        visibility: repo.visibility
+      }))
+      setUserInfo({
+        avatar_url: userData.avatar_url,
+        bio: userData.bio,
+        name: userData.name,
+        login: userData.login,
+        repositoriesList: filteredRepos
       })
+    } catch (error) {
+      setShowAlertState(true)
+      navigate('/')
+    } finally {
+      setLoadingState(false)
+    }
   }
 
   useEffect(() => {
     getUser()
   }, [])
+
   useEffect(() => {
     console.log(userInfo)
   }, [userInfo])

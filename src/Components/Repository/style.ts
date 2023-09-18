@@ -87,7 +87,8 @@ export const RepositoryDivStyled = styled.div<RepositoryStyleProps>`
     border-radius: 11px;
   }
 
-  p {
+  p,
+  a {
     color: var(--repository-name-text-color);
     font-size: 13px;
     font-weight: 500;
