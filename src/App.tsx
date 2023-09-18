@@ -19,9 +19,11 @@ function App() {
 
                 <Route path="/:user" element={<ProfileInformationPage />} />
                 <Route
-                  path=":user/repositories/:index"
+                  path="/repositories/:index"
                   element={<RepositoryInfoPage />}
                 />
+
+                <Route path="*" element={<h2>Olá</h2>} />
               </Routes>
             </BrowserRouter>
           </UserInfoContextProvider>

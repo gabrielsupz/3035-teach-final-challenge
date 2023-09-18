@@ -10,8 +10,10 @@ export function RepositoryInfoPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!userInfo.login) {
-      navigate('/')
+    if (index) {
+      if (!userInfo.repositoriesList[parseInt(index)]) {
+        navigate('/t')
+      }
     }
   }, [])
 

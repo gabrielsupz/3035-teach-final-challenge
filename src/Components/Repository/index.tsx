@@ -19,7 +19,7 @@ export function Repository({
   const navigate = useNavigate()
 
   const handleCardClick = () => {
-    navigate(`repositories/${index}`)
+    navigate(`/repositories/${index}`)
   }
 
   function simplifyStrings(string: string) {
