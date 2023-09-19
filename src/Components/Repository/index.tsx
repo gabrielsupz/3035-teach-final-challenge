@@ -19,7 +19,7 @@ export function Repository({
   const navigate = useNavigate()
 
   const handleCardClick = () => {
-    navigate(`/repositories/${index}`)
+    navigate(`repositories/${index}`)
   }
 
   function simplifyStrings(string: string) {
@@ -42,10 +42,10 @@ export function Repository({
 
   if (RepositoryDatailsShow) {
     return (
-      <S.RepositoryStyled showDatails>
+      <S.RepositoryStyled showDetails={true}>
         <h3>{name}</h3>
 
-        <S.RepositoryDivStyled showDatails>
+        <S.RepositoryDivStyled showDetails={true}>
           <h4>
             Link:{' '}
             <a target="_blank" href={url}>
@@ -53,19 +53,19 @@ export function Repository({
             </a>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled showDatails>
+        <S.RepositoryDivStyled showDetails={true}>
           <h4>
             Privacidade:{' '}
             <p>{visibility ? capitalizeFirstLetter(visibility) : ''}</p>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled showDatails>
+        <S.RepositoryDivStyled showDetails={true}>
           <h4>
             Linguagem: <p>{language ? language : 'Sem linguagem definida'}</p>
           </h4>
         </S.RepositoryDivStyled>
 
-        <S.RepositoryDivStyled showDatails>
+        <S.RepositoryDivStyled showDetails={true}>
           <h4>
             Descrição: <p>{description ? description : 'Sem descrição'}</p>
           </h4>
@@ -74,14 +74,10 @@ export function Repository({
     )
   } else {
     return (
-      <S.RepositoryStyled
-        showDatails={false}
-        role="button"
-        onClick={() => handleCardClick()}
-      >
+      <S.RepositoryStyled role="button" onClick={() => handleCardClick()}>
         <h3>{name}</h3>
 
-        <S.RepositoryDivStyled showDatails={false}>
+        <S.RepositoryDivStyled>
           <h4>
             Link:{' '}
             <a target="_blank" href={url}>
@@ -89,7 +85,7 @@ export function Repository({
             </a>
           </h4>
         </S.RepositoryDivStyled>
-        <S.RepositoryDivStyled showDatails={false}>
+        <S.RepositoryDivStyled>
           <h4>
             Descrição:{' '}
             <p>

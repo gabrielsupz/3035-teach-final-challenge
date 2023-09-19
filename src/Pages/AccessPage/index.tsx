@@ -5,7 +5,7 @@ import * as S from './style'
 export function AccessPage() {
   return (
     <S.AccessPage>
-      <Header isVisibleOnLargeScreens={false} />
+      <Header />
       <Aside />
       <FormAccess />
     </S.AccessPage>

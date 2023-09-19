@@ -19,7 +19,7 @@ function App() {
 
                 <Route path="/:user" element={<ProfileInformationPage />} />
                 <Route
-                  path="/repositories/:index"
+                  path="/:user/repositories/:index"
                   element={<RepositoryInfoPage />}
                 />
 

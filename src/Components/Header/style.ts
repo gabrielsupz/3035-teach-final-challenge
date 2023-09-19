@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components'
 
 interface HeaderProps {
-  isVisibleOnLargeScreens: boolean
+  isVisibleOnLargeScreens?: boolean
 }
 
 export const HeaderStyled = styled.header<HeaderProps>`

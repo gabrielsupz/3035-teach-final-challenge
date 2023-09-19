@@ -2,20 +2,11 @@ import * as S from './style'
 import { Header } from '../../Components/Header/Header'
 import { Repository } from '../../Components/Repository'
 import { useUserInfo } from '../../Contexts/UserInfoContext'
-import { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+
+import { useParams } from 'react-router-dom'
 export function RepositoryInfoPage() {
   const { userInfo } = useUserInfo()
   const { index } = useParams()
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (index) {
-      if (!userInfo.repositoriesList[parseInt(index)]) {
-        navigate('/t')
-      }
-    }
-  }, [])
 
   if (index) {
     const indexNumber = parseInt(index)

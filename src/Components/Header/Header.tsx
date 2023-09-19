@@ -1,7 +1,7 @@
 import * as S from './style'
 
 interface HeaderProps {
-  isVisibleOnLargeScreens: boolean
+  isVisibleOnLargeScreens?: boolean
 }
 
 export function Header({ isVisibleOnLargeScreens }: HeaderProps) {
