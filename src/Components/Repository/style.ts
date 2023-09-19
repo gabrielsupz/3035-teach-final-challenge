@@ -1,10 +1,22 @@
-import { css, styled } from 'styled-components'
+import { css, styled, keyframes } from 'styled-components'
 
 interface RepositoryStyleProps {
   showDetails?: boolean
 }
+const fromBottom = keyframes`
+from {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+`
 
 export const RepositoryStyled = styled.div<RepositoryStyleProps>`
+  animation: ${fromBottom} 0.7s backwards;
+
   ${({ showDetails }) =>
     showDetails
       ? css`

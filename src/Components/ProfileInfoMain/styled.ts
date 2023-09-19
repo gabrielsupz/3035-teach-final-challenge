@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled, keyframes } from 'styled-components'
 
 export const ProfileInfoMainStyled = styled.main`
   display: flex;
@@ -69,6 +69,7 @@ export const NameAndBioStyled = styled.div`
   flex-direction: column;
   gap: 10px;
 `
+
 export const RepositorysBoxStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -82,6 +83,16 @@ export const RepositorysBoxStyled = styled.div`
     padding: 0;
     padding-top: 20px;
     align-items: center;
+  }
+
+  div:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  div:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  div:nth-child(3) {
+    animation-delay: 0.6s;
   }
 `
 export const SectionRepositoryStyled = styled.div`
