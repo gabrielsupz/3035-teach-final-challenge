@@ -65,12 +65,12 @@ export function ProfileInfoMain() {
                   <path
                     d="M5.19943 0.983093L1.4637 4.71882C1.05467 5.12785 1.07697 5.79758 1.5123 6.1785L5.19943 9.40473"
                     stroke="#C4C4C4"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M9.69105 5.47461H1.26941"
                     stroke="#C4C4C4"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   />
                 </svg>
               </S.PageButtonStyled>
@@ -85,12 +85,12 @@ export function ProfileInfoMain() {
                   <path
                     d="M5.76304 0.983093L9.49876 4.71882C9.9078 5.12785 9.8855 5.79758 9.45016 6.1785L5.76304 9.40473"
                     stroke="#575759"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M1.27154 5.47461H9.69318"
                     stroke="#575759"
-                    stroke-linecap="round"
+                    strokeLinecap="round"
                   />
                 </svg>
               </S.PageButtonStyled>
