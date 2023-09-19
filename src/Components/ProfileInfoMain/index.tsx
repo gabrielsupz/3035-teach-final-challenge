@@ -1,13 +1,22 @@
 import { Repository } from '../Repository'
 import { useUserInfo } from '../../Contexts/UserInfoContext'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './styled'
 
+export interface Colors {
+  color: '#575759' | '#C4C4C4'
+}
 export function ProfileInfoMain() {
   const { userInfo } = useUserInfo()
   const [currentPage, setCurrentPage] = useState(1)
+  const [prevPageButton, setPrevPageButton] = useState<Colors>({
+    color: '#575759'
+  })
+  const [nextPageButton, setNextPageButton] = useState<Colors>({
+    color: '#575759'
+  })
   const repositoriesList = userInfo.repositoriesList
-
+  //
   const pages = repositoriesList ? Math.ceil(repositoriesList.length / 3) : 0
   const startIndex = (currentPage - 1) * 3
   const endIndex = startIndex + 3
@@ -26,6 +35,24 @@ export function ProfileInfoMain() {
       setCurrentPage(currentPage - 1)
     }
   }
+
+  useEffect(() => {
+    if (currentPage === pages) {
+      setNextPageButton({ color: '#C4C4C4' })
+    } else {
+      setNextPageButton({
+        color: '#575759'
+      })
+    }
+
+    if (currentPage === 1) {
+      setPrevPageButton({ color: '#C4C4C4' })
+    } else {
+      setPrevPageButton({
+        color: '#575759'
+      })
+    }
+  }, [currentPage])
 
   return (
     <S.ProfileInfoMainStyled>
@@ -54,7 +81,10 @@ export function ProfileInfoMain() {
               {currentPage} de {pages}
             </p>
             <div>
-              <S.PageButtonStyled onClick={handlePreviousPage}>
+              <S.PageButtonStyled
+                color={prevPageButton.color}
+                onClick={handlePreviousPage}
+              >
                 <svg
                   width="11"
                   height="10"
@@ -64,17 +94,20 @@ export function ProfileInfoMain() {
                 >
                   <path
                     d="M5.19943 0.983093L1.4637 4.71882C1.05467 5.12785 1.07697 5.79758 1.5123 6.1785L5.19943 9.40473"
-                    stroke="#C4C4C4"
+                    stroke={prevPageButton.color}
                     strokeLinecap="round"
                   />
                   <path
                     d="M9.69105 5.47461H1.26941"
-                    stroke="#C4C4C4"
+                    stroke={prevPageButton.color}
                     strokeLinecap="round"
                   />
                 </svg>
               </S.PageButtonStyled>
-              <S.PageButtonStyled onClick={handleNextPage}>
+              <S.PageButtonStyled
+                color={nextPageButton.color}
+                onClick={handleNextPage}
+              >
                 <svg
                   width="11"
                   height="10"
@@ -84,12 +117,12 @@ export function ProfileInfoMain() {
                 >
                   <path
                     d="M5.76304 0.983093L9.49876 4.71882C9.9078 5.12785 9.8855 5.79758 9.45016 6.1785L5.76304 9.40473"
-                    stroke="#575759"
+                    stroke={nextPageButton.color}
                     strokeLinecap="round"
                   />
                   <path
                     d="M1.27154 5.47461H9.69318"
-                    stroke="#575759"
+                    stroke={nextPageButton.color}
                     strokeLinecap="round"
                   />
                 </svg>

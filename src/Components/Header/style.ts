@@ -1,18 +1,18 @@
-import { css, styled } from 'styled-components'
+import { styled, css } from 'styled-components'
 
 interface HeaderProps {
-  isVisibleOnLargeScreens?: boolean
+  $isVisibleOnLargeScreens?: boolean
 }
 
 export const HeaderStyled = styled.header<HeaderProps>`
-  ${({ isVisibleOnLargeScreens }) =>
-    isVisibleOnLargeScreens
+  ${({ $isVisibleOnLargeScreens }) =>
+    $isVisibleOnLargeScreens
       ? css`
           display: flex;
         `
       : css`
           display: none;
-        `}
+        `};
 
   padding: 30px 65px 30px 65px;
   background-color: white;

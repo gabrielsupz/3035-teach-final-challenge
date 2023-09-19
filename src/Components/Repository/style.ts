@@ -6,9 +6,11 @@ interface RepositoryStyleProps {
 const fromBottom = keyframes`
 from {
   opacity: 0;
+  pointer-events: none;
   transform: translateY(-100px);
 }
 to {
+  pointer-events: all;
   opacity: 1;
   transform: translateY(0);
 }

@@ -1,4 +1,5 @@
-import { styled, keyframes } from 'styled-components'
+import { styled } from 'styled-components'
+import { Colors } from '.'
 
 export const ProfileInfoMainStyled = styled.main`
   display: flex;
@@ -75,7 +76,7 @@ export const RepositorysBoxStyled = styled.div`
   flex-wrap: wrap;
   padding: 40px 10px 0 10px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   row-gap: 40px;
 
   @media (max-width: 750px) {
@@ -118,15 +119,12 @@ export const PageAndPageButtonsBoxStyled = styled.div`
     display: flex;
     gap: 5px;
   }
-
-  button:nth-child(1) {
-    border-color: var(--page-button-back-border);
-  }
 `
-export const PageButtonStyled = styled.button`
+export const PageButtonStyled = styled.button<Colors>`
+  transition: all 0.5s;
   width: 26px;
   height: 26px;
   border-radius: 8px;
-  border: 1px solid var(--page-button-border);
+  border: 1px solid ${({ color }) => color};
   background-color: white;
 `

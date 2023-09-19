@@ -37,7 +37,7 @@ export function ProfileInformationPage() {
 
   return (
     <S.ProfileInformationPageStyled>
-      <Header isVisibleOnLargeScreens />
+      <Header $isVisibleOnLargeScreens />
       {isLoading ? (
         <S.LoadingContent>
           <Loading />

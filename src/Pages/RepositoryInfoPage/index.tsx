@@ -15,7 +15,7 @@ export function RepositoryInfoPage() {
 
     return (
       <S.RepositoryInfoPageStyled>
-        <Header isVisibleOnLargeScreens />
+        <Header $isVisibleOnLargeScreens />
 
         <S.RepositoryInfoMainStyled>
           <h2>Especificações</h2>
